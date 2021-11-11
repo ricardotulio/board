@@ -1,1 +1,1 @@
-export { default as CardDescription } from './CardDescription.jsx'
+export { default } from './CardDescription.jsx'

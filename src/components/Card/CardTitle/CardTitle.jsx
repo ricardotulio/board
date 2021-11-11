@@ -1,9 +1,9 @@
 import React from 'react'
 
 const CardTitle = ({ title }) => (
-  <div className="card-title">
+  <h3 className="card-title">
     {title}
-  </div>
+  </h3>
 )
 
 export default CardTitle

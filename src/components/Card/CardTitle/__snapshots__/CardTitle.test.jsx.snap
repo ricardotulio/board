@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`can render a title 1`] = `
-<div
+<h3
   class="card-title"
 >
   card title
-</div>
+</h3>
 `;

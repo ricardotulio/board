@@ -4,15 +4,29 @@ exports[`can render a card 1`] = `
 <div
   class="card"
 >
-  <div
+  <h3
     class="card-title"
   >
     card title
-  </div>
+  </h3>
   <div
-    class="card-title"
+    class="card-description"
   >
     card description
+  </div>
+  <div
+    class="actions"
+  >
+    <a
+      href="#"
+    >
+      edit
+    </a>
+    <a
+      href="#"
+    >
+      delete
+    </a>
   </div>
 </div>
 `;
