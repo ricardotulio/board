@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`can render card form 1`] = `
+<form>
+  <label
+    class="input"
+  >
+    Title:
+    <input
+      name="title"
+      type="text"
+    />
+  </label>
+  <label
+    class="input"
+  >
+    Description:
+    <textarea
+      name="description"
+    />
+  </label>
+  <input
+    type="submit"
+    value="Submit"
+  />
+</form>
+`;
