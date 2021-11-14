@@ -1,17 +1,13 @@
 import React from 'react'
 import styles from './styles.module.css'
 
-const CardForm = () => (
-  <form>
+const CardForm = ({ onChange, onSubmit }) => (
+  <form onSubmit={ onSubmit }>
     <label className={ styles.input }>
       Title: 
-      <input name="title" type="text" />
+      <input name='title' type='text' onChange={ onChange } />
     </label>
-    <label className={ styles.input }>
-      Description:
-      <textarea name="description" />
-    </label>
-    <input type="submit" value="Submit" />
+    <button type='submit'>Submit</button>
   </form>
 )
 
