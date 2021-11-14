@@ -1,10 +1,9 @@
 import React from 'react'
 import styles from './styles.module.css'
-import ColumnTitle from './ColumnTitle'
 
 const Column = ({ children, title }) => (
   <div className={ styles.column }>
-    <ColumnTitle>{ title }</ColumnTitle>
+    <h1>{ title }</h1>
     <div className={ styles.cards }>
       { children } 
     </div>
