@@ -1,6 +1,7 @@
 import React from 'react'
 import Board from '../../components/Board'
 import Column from '../../components/Column'
+import Card from '../../components/Card'
 
 class BoardContainer extends React.Component {
   constructor(props) {
@@ -12,8 +13,13 @@ class BoardContainer extends React.Component {
   render() {
     return (
       <Board>
-        {this.state.columns.map((column, index) =>
-          <Column key={ index } column={ column } />)}
+        {this.state.columns.map(
+          (column, index) => (
+            <Column key={ index } column={ column }>
+              {column.cards.map(card => <Card key={ card.id } card={ card } />)}
+            </Column>
+          )
+        )}
       </Board>
     )
   }
