@@ -8,9 +8,6 @@ const Column = ({ children, title }) => (
     <div className={ styles.cards }>
       { children } 
     </div>
-    <div className={ styles.columnActions }>
-      <a href='#'>add card</a>
-    </div>
   </div>
 )
 
