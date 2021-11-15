@@ -15,7 +15,7 @@ const CardFormContainer = ({ handleSubmit }) => {
   }
 
   return (
-    <CardForm onChange={ handleChange } onSubmit={ _handleSubmit } />
+    <CardForm card={ card } onChange={ handleChange } onSubmit={ _handleSubmit } />
   )
 }
 
