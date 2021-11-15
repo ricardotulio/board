@@ -3,6 +3,8 @@ import { prop, find, map, propEq, curry } from 'ramda'
 import DragDropBoard from '../../components/DragDropBoard/DragDropBoard'
 import DroppableColumn from '../../components/DroppableColumn'
 import DraggableCard from '../../components/DraggableCard'
+import CreateCardButton from '../../components/CreateCardButton'
+import CreateColumnButton from '../../components/CreateColumnButton'
 
 const BoardContainer = ({ boardService }) => {
   const board = boardService.fetchBoard()
@@ -20,6 +22,10 @@ const BoardContainer = ({ boardService }) => {
     // if card is being reordered, do something here
   }
 
+  const handleCreateCard = () => {}
+
+  const handleCreateColumn = () => {}
+
   return (
     <DragDropBoard columns={ columns } onDragEnd={ handleDragEnd }>
       {columns.map(
@@ -34,9 +40,11 @@ const BoardContainer = ({ boardService }) => {
                 description={ card.description }
               />
             ))}
+            <CreateCardButton onClick={ handleCreateCard } />
           </DroppableColumn>
         )
       )}
+      <CreateColumnButton onClick={ handleCreateColumn } />
     </DragDropBoard>
   )
 }
