@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { append, pipe, __ } from 'ramda'
 import Column from '../../components/Column'
 import Card from '../../components/Card'
 import Modal from '../../components/Modal'
@@ -11,10 +12,11 @@ const ColumnContainer = ({ column }) => {
   const showModal = () => setModalState(true)
   const hideModal = () => setModalState(false)
 
-  const addCard = (card) => {
-    setCards([...cards, card])
-    hideModal()
-  }
+  const addCard = pipe(
+    append(__, cards),
+    setCards,
+    hideModal,
+  )
 
   return (
     <div>
