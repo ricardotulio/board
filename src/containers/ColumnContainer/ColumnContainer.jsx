@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import { append, pipe, __ } from 'ramda'
 import Column from '../../components/Column'
-import Card from '../../components/Card'
 import Modal from '../../components/Modal'
 import CardFormContainer from '../CardFormContainer'
+import CardContainer from '../CardContainer/CardContainer'
 
 const ColumnContainer = ({ column }) => {
   const [ cards, setCards ] = useState(column.cards)
@@ -21,7 +21,7 @@ const ColumnContainer = ({ column }) => {
   return (
     <div>
       <Column title={ column.title }>
-        {cards.map(card => <Card key={ card.id } card={ card } />)}
+        {cards.map(card => <CardContainer key={ card.id } card={ card } />)}
 
         <div>
           <a onClick={ showModal } href='#'>add card</a>
