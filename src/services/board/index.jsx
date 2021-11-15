@@ -1,52 +1,54 @@
+import { v4 as uuidv4 } from 'uuid'
+
 const fetchBoard = () => {
   return {
     columns: [
       {
-        id: '#01',
+        id: uuidv4(),
         title: 'To Do',
         cards: [
           {
-            id: '#01',
+            id: uuidv4(),
             title: 'create postgre instance',
           },
           {
-            id: '#02',
+            id: uuidv4(),
             title: 'implement login interface',
           },
           {
-            id: '#03',
+            id: uuidv4(),
             title: 'implement login api',
           },
         ],
       },
       {
-        id: '#02',
+        id: uuidv4(),
         title: 'Doing',
         cards: [
           {
-            id: '#04',
+            id: uuidv4(),
             title: 'do the fly check-in',
           },
           {
-            id: '#05',
+            id: uuidv4(),
             title: 'package the stuffs',
           },
         ],
       },
       {
-        id: '#03',
+        id: uuidv4(),
         title: 'Done',
         cards: [
           {
-            id: '#06',
+            id: uuidv4(),
             title: 'covid test',
           },
           {
-            id: '#07',
+            id: uuidv4(),
             title: 'read books',
           },
           {
-            id: '#08',
+            id: uuidv4(),
             title: 'walk the dog',
           },
         ],

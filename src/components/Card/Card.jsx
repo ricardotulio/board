@@ -4,10 +4,10 @@ import CardDescription from './CardDescription'
 import CardActions from './CardActions'
 import styles from './styles.module.css'
 
-const Card = ({ card }) => (
+const Card = ({ title, description }) => (
   <div className={styles.card}>
-    <CardTitle title={ card.title } />
-    <CardDescription description={ card.description } />
+    <CardTitle title={ title } />
+    <CardDescription description={ description } />
     <CardActions />
   </div>
 )
