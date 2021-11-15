@@ -1,9 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`can render card description 1`] = `
-<div
-  class="card-description"
->
-  it is a card description
-</div>
-`;

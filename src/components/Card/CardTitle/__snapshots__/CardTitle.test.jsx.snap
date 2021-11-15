@@ -1,9 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`can render a title 1`] = `
-<h3
-  class="card-title"
->
-  card title
-</h3>
-`;

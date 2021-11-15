@@ -6,9 +6,16 @@ import styles from './styles.module.css'
 
 const Card = ({ title, description }) => (
   <div className={styles.card}>
-    <CardTitle title={ title } />
-    <CardDescription description={ description } />
-    <CardActions />
+    <div>
+      <h3>{ title }</h3>
+    </div>
+    <div>
+      <p>{ description }</p>
+    </div>
+    <div>
+      <a href='#'>edit</a>
+      <a href='#'>delete</a>
+    </div>
   </div>
 )
 
