@@ -6,8 +6,10 @@ const getListStyle = isDraggingOver => ({
   background: isDraggingOver ? "lightblue" : "lightgrey",
 })
 
-const DroppableColumn = ({ children, id, title }) => (
-  <Column title={ title }>
+const DroppableColumn = (props) => {
+  const { id, children } = props
+  
+  return ( 
     <Droppable droppableId={ id }>
       {(provided, snapshot) => (
         <div
@@ -15,12 +17,12 @@ const DroppableColumn = ({ children, id, title }) => (
           ref={provided.innerRef}
           style={getListStyle(snapshot.isDraggingOver)}
         >
-        { children }
+        <Column {...props}>{ children }</Column>
         { provided.placeholder }
         </div>
       )}
     </Droppable>
-  </Column>
-)
+  )
+}
 
 export default DroppableColumn

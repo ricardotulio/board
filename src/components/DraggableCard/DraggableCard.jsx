@@ -15,22 +15,26 @@ const getItemStyle = (isDragging, draggableStyle) => ({
   ...draggableStyle
 })
 
-const DraggableCard = ({ id, index, title, description }) => (
-  <Draggable key={ id } index={ index } draggableId={ id } index={ index }>
-    {(provided, snapshot) => (
-      <div
-        ref={provided.innerRef}
-        {...provided.draggableProps}
-        {...provided.dragHandleProps}
-        style={getItemStyle(
-          snapshot.isDragging,
-          provided.draggableProps.style
-        )}
-      >
-        <Card key={ index } title={ title } description={ description } />
-      </div>
-    )}
-  </Draggable>
-)
+const DraggableCard = (props) => {
+  const { id, index } = props
+
+  return (
+    <Draggable key={ id } index={ index } draggableId={ id } index={ index }>
+      {(provided, snapshot) => (
+        <div
+          ref={provided.innerRef}
+          {...provided.draggableProps}
+          {...provided.dragHandleProps}
+          style={getItemStyle(
+            snapshot.isDragging,
+            provided.draggableProps.style
+          )}
+        >
+          <Card { ...props } />
+        </div>
+      )}
+    </Draggable>
+  )
+}
 
 export default DraggableCard
