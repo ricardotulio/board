@@ -2,9 +2,7 @@ import React from 'react'
 import { Droppable } from 'react-beautiful-dnd'
 import Column from '../Column'
 
-const getListStyle = isDraggingOver => ({
-  background: isDraggingOver ? "lightblue" : "lightgrey",
-})
+const getListStyle = isDraggingOver => ({})
 
 const DroppableColumn = (props) => {
   const { id, children } = props

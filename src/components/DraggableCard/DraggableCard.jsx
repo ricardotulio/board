@@ -3,14 +3,6 @@ import Card from '../../components/Card'
 import { Draggable } from 'react-beautiful-dnd'
 
 const getItemStyle = (isDragging, draggableStyle) => ({
-  // some basic styles to make the items look a bit nicer
-  userSelect: "none",
-  padding: 0,
-  margin: `0 0 0px 0`,
-
-  // change background colour if dragging
-  background: isDragging ? "lightgreen" : "grey",
-
   // styles we need to apply on draggables
   ...draggableStyle
 })

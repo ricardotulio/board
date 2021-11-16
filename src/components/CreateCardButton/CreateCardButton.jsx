@@ -1,7 +1,7 @@
 import React from 'react'
 
 const CreateCardButton = ({ onClick }) => (
-  <button type='button' onClick={ onClick }>+ card</button>
+  <a href='javascript:void(0)' onClick={ onClick }>+ card</a>
 )
 
 export default CreateCardButton

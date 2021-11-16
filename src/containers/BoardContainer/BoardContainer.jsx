@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import { prop, find, map, propEq, curry } from 'ramda'
-import DragDropBoard from '../../components/DragDropBoard/DragDropBoard'
-import DroppableColumn from '../../components/DroppableColumn'
-import DraggableCard from '../../components/DraggableCard'
+import Board from '../../components/DragDropBoard/DragDropBoard'
+import Column from '../../components/DroppableColumn'
+import Card from '../../components/DraggableCard'
 import CreateCardButton from '../../components/CreateCardButton'
 import CreateColumnButton from '../../components/CreateColumnButton'
 
@@ -22,30 +22,60 @@ const BoardContainer = ({ boardService }) => {
     // if card is being reordered, do something here
   }
 
-  const handleCreateCard = () => {}
+  const addCardToColumn = curry((columns, card, columnId) => map(column => {
+    if (column.id == columnId)
+      return {...column, cards: [...column.cards, card]}
+    return column
+  }))(columns)
 
-  const handleCreateColumn = () => {}
+  const handleCreateCard = (columnId) => {
+    const card = {
+      index: '',
+      id: '',
+      title: '',
+      description: '',
+      isBeingEdited: true,
+    }
+
+    setColumns(addCardToColumn(card, columnId))
+  }
+
+  const handleCreateColumn = () => {
+    const column = {
+      id: '',
+      title: '',
+      cards: [],
+      isBeingEdited: true,
+    }
+
+    setColumns([...columns, column])
+  }
 
   return (
-    <DragDropBoard columns={ columns } onDragEnd={ handleDragEnd }>
+    <Board onDragEnd={ handleDragEnd }>
       {columns.map(
         (column, index) => (
-          <DroppableColumn key={ column.id } id={ column.id } title={ column.title }>
+          <Column
+            key={ column.id }
+            id={ column.id }
+            title={ column.title }
+            isBeingEdited={ column.isBeingEdited || false }>
             {column.cards.map((card, index) => (
-              <DraggableCard
+              <Card
                 key={ card.id }
                 index={ index }
                 id={ card.id }
                 title={ card.title }
                 description={ card.description }
+                isBeingEdited={ card.isBeingEdited || false }
               />
             ))}
-            <CreateCardButton onClick={ handleCreateCard } />
-          </DroppableColumn>
+            <CreateCardButton onClick={ () => handleCreateCard(column.id) } />
+          </Column>
         )
       )}
       <CreateColumnButton onClick={ handleCreateColumn } />
-    </DragDropBoard>
+    </Board>
   )
 }
 

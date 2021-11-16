@@ -1,3 +1,11 @@
+.board {
+  display: inline-flex;
+  min-height: 100vh;
+  min-width: 100vw;
+  padding: 10px;
+  background-color: rgb(76, 154, 255);
+}
+
 .columns {
   display: flex;
 }

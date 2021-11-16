@@ -1,6 +1,28 @@
 .card {
-  border: 1px solid #ccc;
-  background: #fafafa;
+  border: 1px solid #eee;
+  background: #fff;
   margin: 5px 0px;
-  padding: 5px 10px;
+  padding: 10px 12px;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+}
+
+.avatar {
+  margin-right: 10px;
+}
+
+.avatar img {
+  width: 46px;
+  height: 46px;
+}
+
+.title h5 {
+  margin: 0px;
+}
+
+.description {
+  font-size: 10pt
 }
